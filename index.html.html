@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital  QR Code</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset & base styles */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #FFFFFF, #FFFFFF);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+    color: #04050e;
+  }
+  .card {
+    background: #04050e(236, 213, 213, 0.1);
+    border-radius: 16px;
+    width: 360px;
+    max-width: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    padding: 32px 28px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+  }
+  .logo-container img {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px #FFFFFF;
+  }
+    .profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .avatar {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url("https://setjen.kemkes.go.id/storage/pejabat/foto/Hrhgdi4XpMvlOBEsbSHypQp8I3fFBtdKwkmaFTMK.png");
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 10px rgba(0 0 0 / 0.4);
+    border: 2px solid #fff;
+  }
+  .name-title {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+  .title {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 5px;
+  }
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e0e0ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .contact-item:hover,
+  .contact-item:focus {
+    color: #04050e;
+    outline: none;
+  }
+  .material-icons {
+    font-size: 24px;
+    color: ##FFFFFF;
+    flex-shrink: 0;
+  }
+  .qr-container {
+    align-self: center;
+    padding: 12px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    cursor: default;
+  }
+  @media (max-width: 400px) {
+    .card {
+      width: 100%;
+      padding: 24px 20px 32px;
+    }
+  }
+</style>
+</head>
+<body>
+  <article class="card" aria-label="Digital Card">
+     <div class="logo-container">
+      <img src="https://kemenkescorpu.kemkes.go.id/_nuxt/img/logo-corpu.76f2f73.png" alt="Company logo with modern style blue background and white text reading Company Logo" 
+      onerror="this.style.display='none'" />
+    </div>
+    <section class="profile">
+      <div class="avatar" role="img" aria-label="Profile photo"></div>
+      <div class="name-title">
+        <h1 class="name">Dwi Meilani</h1>
+        <p class="title">Director of Centre for Competency Development</p>
+      </div>
+    </section>
+         </a>
+          <p class="title">Ministry of Health The Republic of Indonesia</p>
+      <a href="https://maps.app.goo.gl/D9JUHGGH4HEstFzz5/?q=Ministry of Health The Republic of Indonesia" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Address location">
+        <span class="material-icons" aria-hidden="true">location_on</span>
+        <span>Jl.H.R Rasuna Said Blok X5 Kav 4-9, Kuningan - Jakarta Selatan</span>
+      </a>
+          <a href="https://wa.me/6281383459407"  target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Call dwi meilani">
+        <span class="material-icons" aria-hidden="true">phone</span>
+        <span class="contact-text">+6281383459407</span>
+      </a>
+      <a href="mailto:dwi.Meilnai@gmail.com" class="contact-item" aria-label="Send email to John Doe">
+        <span class="material-icons" aria-hidden="true">email</span>
+        <span>dwi.meilani@gmail.com</span>
+      </a>
+<a href="mailto:ppkasn@kemkes.go.id" class="contact-item" aria-label="Send email to John Doe">
+        <span class="material-icons" aria-hidden="true">email</span>
+        <span>ppkasn@kemkes.go.id</span>
+    </nav>
+    <div id="qrcode" class="qr-container" aria-label="QR code with all contact information" role="img"></div>
+  </article>
+
+  <!-- QRCode library from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-Tb6F5ylJ8X1h6BgVAqPS/cjoqjCIJaE9nSDyz6qcQnzEBA9gVvvMrXYORRdJAPSGOf2YDrAdpXpD95R/ha/IRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Prepare vCard data with WhatsApp, address, and email combined
+    // Using MECARD format for simplicity and compatibility
+    const fullName = "Dwi Meilani";
+    const phone = "+6281383459407";
+    const email = "dwi.meilani@gmail.com";
+    const address = "  Ministry of Health The Republic of Indonesia  Jl.H.R Rasuna Said Blok X5 Kav 4-9, Kuningan - Jakarta Selatan";
+    // WhatsApp URI can be included as a website URL field or note for full info, but MECARD has limited fields
+    // We'll encode a sales/custom text that combines all contact info for scanning convenience
+    const vCardData =
+      "BEGIN:VCARD\n" +
+      "VERSION:3.0\n" +
+      `FN:${fullName}\n` +
+      `TEL;TYPE=cell:${phone}\n` +
+      `EMAIL:${email}\n` +
+      `ADR;TYPE=home:;;${address};;;;\n` +
+      `URL:https://wa.me/6281383459407\n` +
+      "END:VCARD";
+
+    // Generate QR code inside #qrcode container
+    const qr = new QRCode(document.getElementById("qrcode"), {
+      text: vCardData,
+      width: 180,
+      height: 180,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
